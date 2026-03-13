@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="/assets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<h1 class="logo">{{ site.title }}</h1>
+
+<nav>
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/priorities">Priorities</a>
+<a href="/events">Events</a>
+<a href="/volunteer">Volunteer</a>
+<a class="donate" href="/donate">Donate</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<h2>{{ page.hero }}</h2>
+<p>{{ page.subhero }}</p>
+</div>
+</section>
+
+<main class="container">
+{{ content }}
+</main>
+
+<footer>
+<div class="container">
+<p>Paid for by Evan Skinner for County Commissioner</p>
+<p>© {{ site.time | date: '%Y' }}</p>
+</div>
+</footer>
+
+</body>
+</html>
