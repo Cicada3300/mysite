@@ -11,6 +11,8 @@ margin:auto;
 padding:20px;
 }
 
+/* HEADER */
+
 header{
 background:#002e5b;
 color:white;
@@ -20,13 +22,17 @@ header .logo{
 margin:0;
 }
 
+/* NAV */
+
 nav{
 margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
 }
 
 nav a{
 color:white;
-margin-right:20px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -37,9 +43,11 @@ padding:8px 14px;
 border-radius:5px;
 }
 
+/* HERO */
+
 .hero{
 background:#e5e5e5;
-padding:40px 0;
+padding:40px 20px;
 text-align:center;
 }
 
@@ -47,10 +55,14 @@ text-align:center;
 margin-top:0;
 }
 
+/* MAIN CONTENT */
+
 main{
 background:white;
 padding:30px;
 }
+
+/* FOOTER */
 
 footer{
 background:#002e5b;
@@ -58,4 +70,36 @@ color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
+}
+
+/* MOBILE STYLES */
+
+@media (max-width: 768px){
+
+.container{
+padding:15px;
+}
+
+nav{
+flex-direction:column;
+align-items:flex-start;
+}
+
+nav a{
+display:block;
+padding:5px 0;
+}
+
+.hero{
+padding:30px 15px;
+}
+
+main{
+padding:20px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
 }
