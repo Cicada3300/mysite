@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
-<title>{{ page.title }} | {{ site.title }}</title>
-<link rel="stylesheet" href="/mysite/assets/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ page.title }} | {{ site.title }}</title>
+
+<link rel="stylesheet" href="{{ "/mysite/assets/style.css" | relative_url }}">
+
 </head>
 
 <body>
 
 <header>
-<div class="container">
+
+<div class="container nav-container">
+
 <h1 class="logo">{{ site.title }}</h1>
 
-<nav>
-<a href="/mysite">Home</a>
-<a href="/mysite/about">About</a>
-<a href="/mysite/priorities">Priorities</a>
-<a href="/mysite/events">Events</a>
-<a href="/mysite/volunteer">Volunteer</a>
-<a class="donate" href="/mysite/donate">Donate</a>
+<button class="hamburger" onclick="toggleMenu()">
+☰
+</button>
+
+<nav id="nav-menu">
+
+<a href="{{ "/mysite/" | relative_url }}">Home</a>
+<a href="{{ "/mysite/about" | relative_url }}">About</a>
+<a href="{{ "/mysite/priorities" | relative_url }}">Priorities</a>
+<a href="{{ "/mysite/events" | relative_url }}">Events</a>
+<a href="{{ "/mysite/volunteer" | relative_url }}">Volunteer</a>
+<a class="donate" href="{{ "/mysite/donate" | relative_url }}">Donate</a>
+
 </nav>
 
 </div>
+
 </header>
 
 <section class="hero">
+
 <div class="container">
+
 <h2>{{ page.hero }}</h2>
 <p>{{ page.subhero }}</p>
+
 </div>
+
 </section>
 
 <main class="container">
+
 {{ content }}
+
 </main>
 
 <footer>
+
 <div class="container">
+
 <p>Paid for by Evan Skinner for County Commissioner</p>
-<p>© {{ site.time | date: '%Y' }}</p>
+<p>© {{ site.time | date: "%Y" }}</p>
+
 </div>
+
 </footer>
+
+<script>
+
+function toggleMenu() {
+
+var menu = document.getElementById("nav-menu");
+
+if(menu.classList.contains("open")){
+menu.classList.remove("open");
+}
+else{
+menu.classList.add("open");
+}
+
+}
+
+</script>
 
 </body>
 </html>
